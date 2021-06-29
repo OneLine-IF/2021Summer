@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="bookInfo"
+            type="android.example.assignment2.BookInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".BookInfoActivity"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/info_title_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{bookInfo.title}"
+            android:textSize="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@color/colorBlack"></TextView>
+
+
+        <TextView
+            android:id="@+id/info_writer_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{bookInfo.writer}"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/info_title_textview"
+            android:textColor="@color/colorBlack"></TextView>
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_line2"
+            android:text="네이버 검색"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/info_writer_textview"
+            android:textColor="@color/colorBlack"
+            android:onClick="onClick_Search"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
